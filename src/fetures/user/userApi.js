@@ -7,7 +7,7 @@ export const getAllUserPermission = createAsyncThunk(
   async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5050/api/v1/permission",
+        "https://aspire-io7b2khl3-sayyidsaadi.vercel.app/api/v1/permission",
         {
           withCredentials: true,
         }
@@ -26,7 +26,7 @@ export const createNewPermission = createAsyncThunk(
   async (data) => {
     try {
       const response = await axios.post(
-        "http://localhost:5050/api/v1/permission",
+        "https://aspire-io7b2khl3-sayyidsaadi.vercel.app/api/v1/permission",
         data,
         {
           withCredentials: true,
@@ -45,7 +45,7 @@ export const deletePermission = createAsyncThunk(
   async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:5050/api/v1/permission/${id}`,
+        `https://aspire-io7b2khl3-sayyidsaadi.vercel.app/api/v1/permission/${id}`,
         {
           withCredentials: true,
         }
@@ -63,7 +63,7 @@ export const updatePermissionStatus = createAsyncThunk(
   async ({ id, status }) => {
     try {
       const response = await axios.patch(
-        `http://localhost:5050/api/v1/permission/status/${id}`,
+        `https://aspire-io7b2khl3-sayyidsaadi.vercel.app/api/v1/permission/status/${id}`,
         { status },
         {
           withCredentials: true,
@@ -79,9 +79,12 @@ export const updatePermissionStatus = createAsyncThunk(
 // Get All Roles
 export const getAllRoles = createAsyncThunk("user/getAllRoles", async () => {
   try {
-    const response = await axios.get("http://localhost:5050/api/v1/role", {
-      withCredentials: true,
-    });
+    const response = await axios.get(
+      "https://aspire-io7b2khl3-sayyidsaadi.vercel.app/api/v1/role",
+      {
+        withCredentials: true,
+      }
+    );
     return response.data;
   } catch (error) {
     throw new Error(error.response.data.message);
@@ -94,7 +97,7 @@ export const createNewRole = createAsyncThunk(
   async (data) => {
     try {
       const response = await axios.post(
-        "http://localhost:5050/api/v1/role",
+        "https://aspire-io7b2khl3-sayyidsaadi.vercel.app/api/v1/role",
         data,
         {
           withCredentials: true,
@@ -111,7 +114,7 @@ export const createNewRole = createAsyncThunk(
 export const deleteRoles = createAsyncThunk("user/deleteRoles", async (id) => {
   try {
     const response = await axios.delete(
-      `http://localhost:5050/api/v1/role/${id}`,
+      `https://aspire-io7b2khl3-sayyidsaadi.vercel.app/api/v1/role/${id}`,
       {
         withCredentials: true,
       }
@@ -128,7 +131,7 @@ export const updateRolesUpdate = createAsyncThunk(
   async (data) => {
     try {
       const response = await axios.patch(
-        `http://localhost:5050/api/v1/role/${data.id}`,
+        `https://aspire-io7b2khl3-sayyidsaadi.vercel.app/api/v1/role/${data.id}`,
         data,
         {
           withCredentials: true,
@@ -147,7 +150,7 @@ export const updateRolesStatus = createAsyncThunk(
   async ({ id, status }) => {
     try {
       const response = await axios.patch(
-        `http://localhost:5050/api/v1/role/status/${id}`,
+        `https://aspire-io7b2khl3-sayyidsaadi.vercel.app/api/v1/role/status/${id}`,
         { status },
         {
           withCredentials: true,
@@ -164,7 +167,7 @@ export const updateRolesStatus = createAsyncThunk(
 export const createUser = createAsyncThunk("user/createUser", async (data) => {
   try {
     const response = await axios.post(
-      "http://localhost:5050/api/v1/user/",
+      "https://aspire-io7b2khl3-sayyidsaadi.vercel.app/api/v1/user/",
       data,
       {
         withCredentials: true,
@@ -179,9 +182,12 @@ export const createUser = createAsyncThunk("user/createUser", async (data) => {
 // Get All User
 export const getAllUser = createAsyncThunk("user/getAllUser", async () => {
   try {
-    const response = await axios.get("http://localhost:5050/api/v1/user/", {
-      withCredentials: true,
-    });
+    const response = await axios.get(
+      "https://aspire-io7b2khl3-sayyidsaadi.vercel.app/api/v1/user/",
+      {
+        withCredentials: true,
+      }
+    );
     return response.data;
   } catch (error) {
     throw new Error(error.response.data.message);
@@ -192,7 +198,7 @@ export const getAllUser = createAsyncThunk("user/getAllUser", async () => {
 export const userUpdate = createAsyncThunk("user/userUpdate", async (data) => {
   try {
     const response = await axios.patch(
-      `http://localhost:5050/api/v1/user/${data._id}`,
+      `https://aspire-io7b2khl3-sayyidsaadi.vercel.app/api/v1/user/${data._id}`,
       data,
       {
         withCredentials: true,
@@ -208,7 +214,7 @@ export const userUpdate = createAsyncThunk("user/userUpdate", async (data) => {
 export const userDelete = createAsyncThunk("user/userDelete", async (id) => {
   try {
     const response = await axios.delete(
-      `http://localhost:5050/api/v1/user/${id}`,
+      `https://aspire-io7b2khl3-sayyidsaadi.vercel.app/api/v1/user/${id}`,
       {
         withCredentials: true,
       }
@@ -225,7 +231,7 @@ export const updateUserStatus = createAsyncThunk(
   async ({ id, status }) => {
     try {
       const response = await axios.put(
-        `http://localhost:5050/api/v1/user/status/${id}`,
+        `https://aspire-io7b2khl3-sayyidsaadi.vercel.app/api/v1/user/status/${id}`,
         { status },
         {
           withCredentials: true,

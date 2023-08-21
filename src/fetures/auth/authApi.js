@@ -7,7 +7,7 @@ export const userRegister = createAsyncThunk(
   async (data) => {
     try {
       const response = await axio.post(
-        "http://localhost:5050/api/v1/auth/register",
+        "https://aspire-io7b2khl3-sayyidsaadi.vercel.app/api/v1/auth/register",
         data,
         {
           withCredentials: true,
@@ -24,7 +24,7 @@ export const userRegister = createAsyncThunk(
 export const userLogin = createAsyncThunk("auth/userLogin", async (data) => {
   try {
     const response = await axio.post(
-      "http://localhost:5050/api/v1/auth",
+      "https://aspire-io7b2khl3-sayyidsaadi.vercel.app/api/v1/auth",
       data,
       {
         withCredentials: true,
@@ -41,7 +41,7 @@ export const userLogin = createAsyncThunk("auth/userLogin", async (data) => {
 export const userLogout = createAsyncThunk("auth/userLogout", async () => {
   try {
     const response = await axio.post(
-      "http://localhost:5050/api/v1/auth/logout",
+      "https://aspire-io7b2khl3-sayyidsaadi.vercel.app/api/v1/auth/logout",
       "",
       {
         withCredentials: true,
@@ -57,9 +57,12 @@ export const userLogout = createAsyncThunk("auth/userLogout", async () => {
 // Get Login User
 export const logedInUser = createAsyncThunk("auth/logedInUser", async () => {
   try {
-    const response = await axio.get("http://localhost:5050/api/v1/auth/me", {
-      withCredentials: true,
-    });
+    const response = await axio.get(
+      "https://aspire-io7b2khl3-sayyidsaadi.vercel.app/api/v1/auth/me",
+      {
+        withCredentials: true,
+      }
+    );
 
     return response.data;
   } catch (error) {
@@ -73,7 +76,7 @@ export const updateUser = createAsyncThunk(
   async ({ id, data }) => {
     try {
       const response = await axio.put(
-        `http://localhost:5050/api/v1/user/${id}`,
+        `https://aspire-io7b2khl3-sayyidsaadi.vercel.app/api/v1/user/${id}`,
         data,
         {
           withCredentials: true,
