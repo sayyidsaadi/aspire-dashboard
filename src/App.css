@@ -1,0 +1,6 @@
+.form-check-input {
+  background-color: #777 !important;
+}
+.form-check-input:checked {
+  background-color: #eb1616 !important;
+}
